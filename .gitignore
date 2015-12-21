@@ -55,3 +55,7 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Protobuf files
+
+*pb2.py

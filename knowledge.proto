@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package knowledge;
+
+service KnowledgeManager {
+    rpc Knowledge (KnowledgeRequest) returns (KnowledgeReply) {}
+}
+
+message KnowledgeRequest {
+    optional string topic = 1;
+}
+
+message KnowledgeReply {
+    optional string response = 1;
+}
