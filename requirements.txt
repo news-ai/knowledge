@@ -1,0 +1,7 @@
+cassandra-driver==3.0.0
+cql==1.4.0
+grpcio==0.11.0b1
+pep8==1.6.2
+requests==2.7.0
+virtualenv==13.1.2
+virtualenvwrapper==4.7.1

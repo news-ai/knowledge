@@ -14,7 +14,6 @@ class NoseTestCommand(TestCommand):
     def run_tests(self):
         # Run nose ensuring that argv simulates running nosetests directly
         import nose
-        import knowledge_server
         nose.run_exit(argv=['nosetests', '--with-coverage'])
 
 config = {
