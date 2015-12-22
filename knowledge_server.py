@@ -1,9 +1,14 @@
+import time
+
 from grpc.beta import implementations
 from grpc import framework
 
 import knowledge_pb2
-from knowledge import entity_extraction, models
-import time
+from middleware import log
+from knowledge import entity_extraction
+from knowledge.models import client
+
+logger = log.setup_custom_logger('knowledge')
 
 
 class Knowledge(knowledge_pb2.BetaKnowledgeManagerServicer):
@@ -14,19 +19,19 @@ class Knowledge(knowledge_pb2.BetaKnowledgeManagerServicer):
 
 
 def serve():
-    client = models.client.CassandraClient()
-    client.connect(['127.0.0.1'])
+    cassandra_client = client.CassandraClient()
+    cassandra_client.connect(['127.0.0.1'])
     knowledge_server = knowledge_pb2.beta_create_KnowledgeManager_server(
         Knowledge())
     knowledge_server.add_insecure_port('[::]:50051')
     knowledge_server.start()
-    print 'Knowledge server has started'
+    logger.debug('Knowledge server has started')
 
     try:
         while True:
             time.sleep(60 * 60 * 24)
     except KeyboardInterrupt:
-        print 'Knowledge server has stopped'
+        logger.debug('Knowledge server has stopped')
         knowledge_server.stop(0)
 
 if __name__ == '__main__':
