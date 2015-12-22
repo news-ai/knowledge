@@ -36,6 +36,3 @@ class CassandraClient(object):
         print 'Starting Cassandra'
         self.session = connection.setup(nodes, default_keyspace=KEYSPACE)
         self.sync_model()
-
-    def close(self):
-        print 'x'
