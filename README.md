@@ -12,4 +12,4 @@ To build project run `make`.
 
 ### Running a test
 
-To run a test you can execute: `python -m tests.external.test_google`, which will run the python file `tests/external/test_google.py`. This is a way around relative imports and adding to a PYTHONPATH, which is also possible.
+To run a test you can execute: `python setup.py test`, which will run all the tests in the folder `tests/`. 
