@@ -1,0 +1,99 @@
+// 'name': {'concept_type': 'nytd_des', 'specific_concept': 'Baseball'}
+
+{
+    u 'status': u 'OK', u 'num_results': 1, u 'results': [{
+        u 'article_list': {
+            u 'total': 115964, u 'results': [{
+                u 'body': u 'The Colorado Rockies agreed to a three-year, $10.4 million contract with the right-handed reliever Adam Ottavino.', u 'type_of_material': u 'Brief', u 'byline': u 'By THE ASSOCIATED PRESS', u 'title': u 'Rockies Sign Reliever', u 'url': u 'http://www.nytimes.com/2015/12/22/sports/baseball/rockies-sign-reliever.html', u 'concepts': {
+                    u 'nytd_org': [u 'Colorado Rockies'], u 'nytd_des': [u 'Baseball']
+                }, u 'date': u '2015-12-22T00:00:00Z', u 'document_type': u 'article'
+            }, {
+                u 'body': u 'Hall of Fame voters open the door to questions, if not to a 74-year-old former star who no longer poses a threat to baseball.', u 'type_of_material': u 'News', u 'byline': u 'By MICHAEL POWELL', u 'title': u 'Pete Rose\u2019s Ban, a Product of His Flaws, Highlights Others\u2019 Faults', u 'url': u 'http://www.nytimes.com/2015/12/20/sports/baseball/lamenting-pete-roses-flaws-while-reflecting-on-ours.html', u 'concepts': {
+                    u 'nytd_org': [u 'Baseball Hall of Fame', u 'Cincinnati Reds'], u 'nytd_per': [u 'Rose, Pete'], u 'nytd_des': [u 'Baseball', u 'Gambling', u 'Doping (Sports)']
+                }, u 'date': u '2015-12-20T00:00:00Z', u 'document_type': u 'article'
+            }, {
+                u 'body': u 'The Cincinnati Reds and the Washington Nationals agreed in principle to a trade that will send second baseman Brandon Phillips from the Reds to the Nationals for multiple minor league players.', u 'type_of_material': u 'Brief', u 'byline': u 'By REUTERS', u 'title': u 'Trade Seen for Phillips', u 'url': u 'http://www.nytimes.com/2015/12/19/sports/baseball/trade-seen-for-phillips.html', u 'concepts': {
+                    u 'nytd_org': [u 'Cincinnati Reds', u 'Washington Nationals'], u 'nytd_des': [u 'Baseball']
+                }, u 'date': u '2015-12-19T00:00:00Z', u 'document_type': u 'article'
+            }, {
+                u 'body': u 'There is much to disagree with on baseball\u2019s new netting policy. Something as serious as protecting fans from a life-altering injury should not be left to the teams.', u 'type_of_material': u 'News', u 'byline': u 'By JOE NOCERA', u 'title': u 'Baseball Has a New Policy on Netting, but There\u2019s a Catch', u 'url': u 'http://www.nytimes.com/2015/12/19/sports/baseball/baseball-has-a-new-policy-on-netting-but-theres-a-catch.html', u 'concepts': {
+                    u 'nytd_org': [u 'Major League Baseball'], u 'nytd_des': [u 'Baseball', u 'Sports Injuries', u 'Stadiums and Arenas', u 'Accidents and Safety']
+                }, u 'date': u '2015-12-19T00:00:00Z', u 'document_type': u 'article'
+            }, {
+                u 'body': u 'Jones, an eight-time All-Star, has been hired as a special assistant to baseball operations.', u 'type_of_material': u 'Brief', u 'byline': u 'By THE ASSOCIATED PRESS', u 'title': u 'Chipper Jones Returning to Braves', u 'url': u 'http://www.nytimes.com/2015/12/18/sports/baseball/chipper-jones-returning-to-braves.html', u 'concepts': {
+                    u 'nytd_org': [u 'Baltimore Orioles', u 'New York Yankees', u 'Chicago Cubs', u 'Atlanta Braves'], u 'nytd_per': [u 'Jones, Chipper', u 'Ryan, Brendan (1982- )'], u 'nytd_des': [u 'Baseball']
+                }, u 'date': u '2015-12-18T00:00:00Z', u 'document_type': u 'article'
+            }, {
+                u 'body': u 'The trip comes amid some initial efforts by baseball authorities in both countries to create a new reality, one in which Cuban ballplayers might someday come and go freely between their country and the major leagues.', u 'type_of_material': u 'News', u 'byline': u 'By BEN STRAUSS', u 'title': u 'M.L.B.\u2019s Good-Will Tour of Cuba Is Hardly the Last Word', u 'url': u 'http://www.nytimes.com/2015/12/18/sports/baseball/mlb-tour-of-cuba-is-hardly-the-last-word.html', u 'concepts': {
+                    u 'nytd_org': [u 'Major League Baseball'], u 'nytd_geo': [u 'Cuba'], u 'nytd_per': [u 'Abreu, Jose Dariel', u 'Velez Carrion, Higinio (1947- )'], u 'nytd_des': [u 'Baseball', u 'Embargoes and Sanctions']
+                }, u 'date': u '2015-12-18T00:00:00Z', u 'document_type': u 'article'
+            }, {
+                u 'body': u 'The contract would take Colon, who can be used as either a starting or relief pitcher, through his 43rd birthday.', u 'type_of_material': u 'News', u 'byline': u 'By TIM ROHAN', u 'title': u 'Bartolo Colon and Mets Said to Agree on One-Year Deal', u 'url': u 'http://www.nytimes.com/2015/12/17/sports/baseball/bartolo-colon-and-mets-agree-on-one-year-deal.html', u 'concepts': {
+                    u 'nytd_org': [u 'New York Mets'], u 'nytd_per': [u 'Colon, Bartolo'], u 'nytd_des': [u 'Baseball']
+                }, u 'date': u '2015-12-17T00:00:00Z', u 'document_type': u 'article'
+            }, {
+                u 'body': u 'The trade, which involved seven players, sent Frazier, an All-Star third baseman, from the Reds to the White Sox and also involved the Dodgers.', u 'type_of_material': u 'News', u 'byline': u 'By THE ASSSOCIATED PRESS', u 'title': u 'Todd Frazier Goes to White Sox in Three-Team Deal', u 'url': u 'http://www.nytimes.com/2015/12/17/sports/baseball/todd-frazier-goes-to-white-sox-in-three-team-deal.html', u 'concepts': {
+                    u 'nytd_org': [u 'Chicago White Sox', u 'Cincinnati Reds', u 'Los Angeles Dodgers'], u 'nytd_per': [u 'Frazier, Todd (1986- )'], u 'nytd_des': [u 'Baseball', u 'Trades (Sports)']
+                }, u 'date': u '2015-12-17T00:00:00Z', u 'document_type': u 'article'
+            }, {
+                u 'body': u 'Brian McNamee, who told Congress that he had injected pitcher Roger Clemens with steroids, was charged on Long Island with driving while intoxicated, driving while impaired by drugs and unlicensed driving.', u 'type_of_material': u 'News', u 'byline': u 'By THE ASSOCIATED PRESS', u 'title': u 'Former Yankees Strength Coach Is Arrested', u 'url': u 'http://www.nytimes.com/2015/12/16/sports/baseball/former-yankees-strength-coach-is-arrested.html', u 'concepts': {
+                    u 'nytd_org': [u 'New York Yankees'], u 'nytd_per': [u 'McNamee, Brian'], u 'nytd_des': [u 'Baseball', u 'Drunken and Reckless Driving']
+                }, u 'date': u '2015-12-16T00:00:00Z', u 'document_type': u 'article'
+            }, {
+                u 'body': u 'Four Cuban major leaguers greeted by fans and members of the Cuban news media in the lobby of Havana&#8217;s Hotel Nacional at the start of the three-day visit.', u 'type_of_material': u 'News', u 'byline': u 'By THE ASSOCIATED PRESS', u 'title': u 'Fans Swarm Four Players in Havana', u 'url': u 'http://www.nytimes.com/2015/12/16/sports/baseball/fans-swarm-four-players-in-havana.html', u 'concepts': {
+                    u 'nytd_org': [u 'Major League Baseball'], u 'nytd_geo': [u 'Cuba'], u 'nytd_per': [u 'Puig, Yasiel'], u 'nytd_des': [u 'Baseball', u 'Defectors (Political)']
+                }, u 'date': u '2015-12-16T00:00:00Z', u 'document_type': u 'article'
+            }]
+        }, u 'concept_created': u '2009-10-28 14:30:04', u 'ancestors': [{
+            u 'concept_created': u '2009-10-28 14:30:04', u 'concept_name': u 'Athletics and Sports', u 'concept_status': u 'Active', u 'concept_updated': u '2015-12-22 09:21:38', u 'vernacular': u 'Sports', u 'is_times_tag': 1, u 'concept_type': u 'nytd_des', u 'concept_id': 9684
+        }], u 'links': [{
+            u 'mapping_type': u 'manual', u 'concept_name': u 'Baseball', u 'concept_status': u 'Active', u 'link_id': 1698852, u 'relation': u 'sameAs', u 'link_type': u 'wikipedia_raw_name', u 'is_times_tag': 1, u 'concept_type': u 'nytd_des', u 'link': u 'Baseball', u 'concept_id': 9944
+        }], u 'scope_notes': [{
+            u 'scope_note': u 'Used for all coverage of professional, collegiate and recreational baseball.', u 'scope_note_name': u 'Baseball', u 'scope_note_type': u 'External'
+        }], u 'taxonomy': [{
+            u 'target_concept_vernacular': u 'NCAA Baseball', u 'source_concept_id': 9944, u 'target_concept_type': u 'nytd_des', u 'taxonomic_relation': u 'NT', u 'taxonomic_verification_status': u 'unverified', u 'source_concept_type': u 'nytd_des', u 'source_concept_name': u 'Baseball', u 'source_concept_vernacular': u 'Baseball', u 'target_concept_id': 71320, u 'target_concept_name': u 'NCAA Baseball Championships'
+        }, {
+            u 'target_concept_vernacular': u 'Sports', u 'source_concept_id': 9944, u 'target_concept_type': u 'nytd_des', u 'taxonomic_relation': u 'BT', u 'taxonomic_verification_status': u 'unverified', u 'source_concept_type': u 'nytd_des', u 'source_concept_name': u 'Baseball', u 'source_concept_vernacular': u 'Baseball', u 'target_concept_id': 9684, u 'target_concept_name': u 'Athletics and Sports'
+        }, {
+            u 'target_concept_vernacular': u 'College World Series', u 'source_concept_id': 9944, u 'target_concept_type': u 'nytd_des', u 'taxonomic_relation': u 'NT', u 'taxonomic_verification_status': u 'unverified', u 'source_concept_type': u 'nytd_des', u 'source_concept_name': u 'Baseball', u 'source_concept_vernacular': u 'Baseball', u 'target_concept_id': 11560, u 'target_concept_name': u 'College World Series'
+        }, {
+            u 'target_concept_vernacular': u 'Minor league', u 'source_concept_id': 9944, u 'target_concept_type': u 'nytd_des', u 'taxonomic_relation': u 'NT', u 'taxonomic_verification_status': u 'unverified', u 'source_concept_type': u 'nytd_des', u 'source_concept_name': u 'Baseball', u 'source_concept_vernacular': u 'Baseball', u 'target_concept_id': 16744, u 'target_concept_name': u 'Minor Leagues'
+        }, {
+            u 'target_concept_vernacular': u 'Stickball', u 'source_concept_id': 9944, u 'target_concept_type': u 'nytd_des', u 'taxonomic_relation': u 'RT', u 'taxonomic_verification_status': u 'unverified', u 'source_concept_type': u 'nytd_des', u 'source_concept_name': u 'Baseball', u 'source_concept_vernacular': u 'Baseball', u 'target_concept_id': 20528, u 'target_concept_name': u 'Stickball'
+        }, {
+            u 'target_concept_vernacular': u 'World Baseball Classic', u 'source_concept_id': 9944, u 'target_concept_type': u 'nytd_des', u 'taxonomic_relation': u 'NT', u 'taxonomic_verification_status': u 'unverified', u 'source_concept_type': u 'nytd_des', u 'source_concept_name': u 'Baseball', u 'source_concept_vernacular': u 'Baseball', u 'target_concept_id': 22256, u 'target_concept_name': u 'World Baseball Classic'
+        }, {
+            u 'target_concept_vernacular': u 'World Series', u 'source_concept_id': 9944, u 'target_concept_type': u 'nytd_des', u 'taxonomic_relation': u 'NT', u 'taxonomic_verification_status': u 'unverified', u 'source_concept_type': u 'nytd_des', u 'source_concept_name': u 'Baseball', u 'source_concept_vernacular': u 'Baseball', u 'target_concept_id': 22268, u 'target_concept_name': u 'World Series'
+        }, {
+            u 'target_concept_vernacular': u '', u 'source_concept_id': 9944, u 'target_concept_type': u 'nytd_des', u 'taxonomic_relation': u 'NT', u 'taxonomic_verification_status': u 'unverified', u 'source_concept_type': u 'nytd_des', u 'source_concept_name': u 'Baseball', u 'source_concept_vernacular': u 'Baseball', u 'target_concept_id': 1469696, u 'target_concept_name': u 'Baseball (College)'
+        }, {
+            u 'target_concept_vernacular': u 'Mitchell Report', u 'source_concept_id': 9944, u 'target_concept_type': u 'nytd_des', u 'taxonomic_relation': u 'NT', u 'taxonomic_verification_status': u 'unverified', u 'source_concept_type': u 'nytd_des', u 'source_concept_name': u 'Baseball', u 'source_concept_vernacular': u 'Baseball', u 'target_concept_id': 16780, u 'target_concept_name': u 'Mitchell Report (Baseball)'
+        }, {
+            u 'target_concept_vernacular': u 'Cy Young Award', u 'source_concept_id': 9944, u 'target_concept_type': u 'nytd_des', u 'taxonomic_relation': u 'NT', u 'taxonomic_verification_status': u 'unverified', u 'source_concept_type': u 'nytd_des', u 'source_concept_name': u 'Baseball', u 'source_concept_vernacular': u 'Baseball', u 'target_concept_id': 69008, u 'target_concept_name': u 'Cy Young Award'
+        }, {
+            u 'target_concept_vernacular': u 'Little League', u 'source_concept_id': 9944, u 'target_concept_type': u 'nytd_org', u 'taxonomic_relation': u 'NT', u 'taxonomic_verification_status': u 'unverified', u 'source_concept_type': u 'nytd_des', u 'source_concept_name': u 'Baseball', u 'source_concept_vernacular': u 'Baseball', u 'target_concept_id': 16016, u 'target_concept_name': u 'Little League'
+        }], u 'concept_name': u 'Baseball', u 'concept_status': u 'Active', u 'search_api_query': u 'http://search-add-api.prd.use1.nytimes.com/svc/add/v1/sitesearch.json?sort=newest&fq=subject%3A%22Baseball%22&type=article%2Cblogpost&offset=0', u 'concept_updated': u '2015-12-22 09:23:15', u 'vernacular': u 'Baseball', u 'descendants': [{
+            u 'concept_created': u '2011-11-08 10:42:24', u 'concept_name': u 'NCAA Baseball Championships', u 'concept_status': u 'Active', u 'concept_updated': u '2015-12-22 09:23:00', u 'vernacular': u 'NCAA Baseball', u 'is_times_tag': 1, u 'concept_type': u 'nytd_des', u 'concept_id': 71320
+        }, {
+            u 'concept_created': u '2009-10-28 14:30:04', u 'concept_name': u 'College World Series', u 'concept_status': u 'Active', u 'concept_updated': u '2015-12-22 09:21:18', u 'vernacular': u 'College World Series', u 'is_times_tag': 1, u 'concept_type': u 'nytd_des', u 'concept_id': 11560
+        }, {
+            u 'concept_created': u '2009-10-28 14:30:04', u 'concept_name': u 'Minor Leagues', u 'concept_status': u 'Active', u 'concept_updated': u '2015-12-22 09:22:03', u 'vernacular': u 'Minor league', u 'is_times_tag': 1, u 'concept_type': u 'nytd_des', u 'concept_id': 16744
+        }, {
+            u 'concept_created': u '2009-10-28 14:30:04', u 'concept_name': u 'World Baseball Classic', u 'concept_status': u 'Active', u 'concept_updated': u '2015-12-22 09:23:41', u 'vernacular': u 'World Baseball Classic', u 'is_times_tag': 1, u 'concept_type': u 'nytd_des', u 'concept_id': 22256
+        }, {
+            u 'concept_created': u '2009-10-28 14:30:04', u 'concept_name': u 'World Series', u 'concept_status': u 'Active', u 'concept_updated': u '2015-12-22 09:21:45', u 'vernacular': u 'World Series', u 'is_times_tag': 1, u 'concept_type': u 'nytd_des', u 'concept_id': 22268
+        }, {
+            u 'concept_created': u '2014-03-14 10:28:01', u 'concept_name': u 'Baseball (College)', u 'concept_status': u 'Active', u 'concept_updated': u '2015-12-22 09:25:11', u 'vernacular': None, u 'is_times_tag': 1, u 'concept_type': u 'nytd_des', u 'concept_id': 1469696
+        }, {
+            u 'concept_created': u '2009-10-28 14:30:04', u 'concept_name': u 'Mitchell Report (Baseball)', u 'concept_status': u 'Active', u 'concept_updated': u '2015-12-22 09:22:37', u 'vernacular': u 'Mitchell Report', u 'is_times_tag': 1, u 'concept_type': u 'nytd_des', u 'concept_id': 16780
+        }, {
+            u 'concept_created': u '2010-10-01 15:11:13', u 'concept_name': u 'Cy Young Award', u 'concept_status': u 'Active', u 'concept_updated': u '2015-12-22 09:21:27', u 'vernacular': u 'Cy Young Award', u 'is_times_tag': 1, u 'concept_type': u 'nytd_des', u 'concept_id': 69008
+        }, {
+            u 'concept_created': u '2009-10-28 14:30:04', u 'concept_name': u 'Little League', u 'concept_status': u 'Deleted', u 'concept_updated': u '2014-07-29 18:13:58', u 'vernacular': u 'Little League', u 'is_times_tag': None, u 'concept_type': u 'nytd_org', u 'concept_id': 16016
+        }, {
+            u 'concept_created': u '2009-10-28 14:30:04', u 'concept_name': u 'Little League World Series', u 'concept_status': u 'Active', u 'concept_updated': u '2015-12-22 09:23:36', u 'vernacular': u 'Little League World Series', u 'is_times_tag': 1, u 'concept_type': u 'nytd_des', u 'concept_id': 16020
+        }], u 'is_times_tag': 1, u 'concept_type': u 'nytd_des', u 'combinations': [{
+            u 'combination_source_concept_id': 9944, u 'combination_source_concept_name': u 'Baseball', u 'combination_target_concept_name': u 'College Athletics', u 'combination_target_concept_type': u 'nytd_des', u 'combination_source_concept_type': u 'nytd_des', u 'combination_target_concept_id': 11556, u 'combination_note': u 'College Baseball'
+        }], u 'concept_id': 9944
+    }], u 'copyright': u 'Copyright (c) 2015 The New York Times Company. All Rights Reserved.'
+}

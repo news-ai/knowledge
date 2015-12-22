@@ -9,8 +9,8 @@ import time
 class Knowledge(knowledge_pb2.BetaKnowledgeManagerServicer):
 
     def EntityExtraction(self, request, context):
-        entity_extraction.entity_extract(request)
-        return knowledge_pb2.EntityReply(response='bye')
+        response = entity_extraction.entity_extract(request)
+        return knowledge_pb2.EntityReply(response=response)
 
 
 def serve():
