@@ -18,6 +18,7 @@ from cassandra.cqlengine.models import Model
 from cassandra.cqlengine.query import BatchQuery, LWTException
 
 from entity import Oranges
+from keyspace import KEYSPACE
 
 
 class CassandraClient(object):
@@ -27,14 +28,14 @@ class CassandraClient(object):
         super(CassandraClient, self).__init__()
         self.session = None
 
-    def connect(self, nodes):
-        print 'Starting Cassandra'
-        cluster = connection.default()
-        self.session = cluster
-
     def sync_model(self):
         log.info("### syncing model...")
         management.sync_table(Oranges)
+
+    def connect(self, nodes):
+        print 'Starting Cassandra'
+        self.session = connection.setup(nodes, default_keyspace=KEYSPACE)
+        self.sync_model()
 
     def close(self):
         print 'x'
