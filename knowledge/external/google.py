@@ -14,6 +14,4 @@ def get_google_knowledge(query):
     }
     url = service_url + '?' + urllib.urlencode(params)
     response = json.loads(urllib.urlopen(url).read())
-    for element in response['itemListElement']:
-        print element['result']['name'] + ' (' + str(element['resultScore']) + ')'
     return response

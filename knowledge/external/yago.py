@@ -11,5 +11,4 @@ def get_aida(query):
     })
     response = urllib2.urlopen(url=service_url, data=data).read()
     response = json.loads(response)
-    print response
     return response

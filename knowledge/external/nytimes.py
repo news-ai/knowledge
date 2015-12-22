@@ -42,5 +42,3 @@ def get_nytimes_semantic(query, concept):
         return response
     else:
         return False
-
-print get_nytimes_semantic({'concept_type': 'nytd_des', 'specific_concept': 'Baseball'}, 'name')
