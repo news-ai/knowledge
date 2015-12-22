@@ -3,13 +3,13 @@ syntax = "proto2";
 package knowledge;
 
 service KnowledgeManager {
-    rpc Topic (TopicRequest) returns (TopicReply) {}
+    rpc EntityExtraction (EntityRequest) returns (EntityReply) {}
 }
 
-message TopicRequest {
+message EntityRequest {
     optional string topic = 1;
 }
 
-message TopicReply {
+message EntityReply {
     optional string response = 1;
 }

@@ -2,13 +2,15 @@ from grpc.beta import implementations
 from grpc import framework
 
 import knowledge_pb2
+from knowledge import entity_extraction
 import time
 
 
 class Knowledge(knowledge_pb2.BetaKnowledgeManagerServicer):
 
-    def Topic(self, request, context):
-        return knowledge_pb2.TopicReply(response='bye')
+    def EntityExtraction(self, request, context):
+        entity_extraction.entity_extract(request)
+        return knowledge_pb2.EntityReply(response='bye')
 
 
 def serve():
