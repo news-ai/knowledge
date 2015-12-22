@@ -14,7 +14,7 @@ class NoseTestCommand(TestCommand):
     def run_tests(self):
         # Run nose ensuring that argv simulates running nosetests directly
         import nose
-        nose.run_exit(argv=['nosetests'])
+        nose.run_exit(argv=['nosetests', '--with-coverage'])
 
 config = {
     'description': 'Key/value store for topic -> information about the topic.',
