@@ -4,9 +4,8 @@ from grpc.beta import implementations
 from grpc import framework
 
 import knowledge_pb2
-from middleware import log
+from middleware import log, database, config
 from knowledge import entity_extraction
-from knowledge.models import client
 
 logger = log.setup_custom_logger('knowledge')
 
@@ -19,8 +18,8 @@ class Knowledge(knowledge_pb2.BetaKnowledgeManagerServicer):
 
 
 def serve():
-    cassandra_client = client.CassandraClient()
-    cassandra_client.connect(['127.0.0.1'])
+    cassandra_client = database.CassandraClient()
+    cassandra_client.connect(['127.0.0.1'], config.KEYSPACE)
     knowledge_server = knowledge_pb2.beta_create_KnowledgeManager_server(
         Knowledge())
     knowledge_server.add_insecure_port('[::]:50051')

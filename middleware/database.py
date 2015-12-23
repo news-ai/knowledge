@@ -11,8 +11,8 @@ from cassandra.cqlengine import ValidationError
 from cassandra.cqlengine.models import Model
 from cassandra.cqlengine.query import BatchQuery, LWTException
 
-from entity import Entity
-from keyspace import KEYSPACE
+from knowledge.models import entity
+import config
 
 
 class CassandraClient(object):
@@ -24,9 +24,9 @@ class CassandraClient(object):
 
     def sync_model(self):
         log.info("### Syncing Models...")
-        management.sync_table(Entity)
+        management.sync_table(entity.Entity)
 
-    def connect(self, nodes):
+    def connect(self, nodes, keyspace):
         log.info("### Starting Cassandra...")
-        self.session = connection.setup(nodes, default_keyspace=KEYSPACE)
+        self.session = connection.setup(nodes, default_keyspace=config.KEYSPACE)
         self.sync_model()
