@@ -3,6 +3,8 @@ import os
 import urllib
 import requests
 
+from middleware import config
+
 
 # Constructing the New York Times URI structure
 # Based on: http://developer.nytimes.com/docs/semantic_api
@@ -33,9 +35,9 @@ def construct_uri_structure(query, concept, api_key):
 
 
 def get_nytimes_semantic(query, concept):
-    api_key = os.getenv('NEWSAI_NYTIMES_SEMANTIC_API', '')
     service_url = 'http://api.nytimes.com/svc/semantic/v2/concept'
-    params = construct_uri_structure(query, concept, api_key)
+    params = construct_uri_structure(
+        query, concept, config.NYTIMES_SEMANTIC_API)
     if params:
         url = service_url + params
         response = requests.get(url).json()
