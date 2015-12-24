@@ -1,4 +1,4 @@
-syntax = "proto2";
+syntax = "proto3";
 
 package knowledge;
 
@@ -7,9 +7,9 @@ service KnowledgeManager {
 }
 
 message EntityRequest {
-    optional string topic = 1;
+    string topic = 1;
 }
 
 message EntityReply {
-    optional string response = 1;
+    string response = 1;
 }
