@@ -5,3 +5,4 @@ pep8==1.6.2
 requests==2.7.0
 virtualenv==13.1.2
 virtualenvwrapper==4.7.1
+newspaper==0.0.9.8
