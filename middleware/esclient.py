@@ -13,4 +13,3 @@ es = Elasticsearch(
     verify_certs=True,
     connection_class=RequestsHttpConnection
 )
-print(es.info())
