@@ -2,7 +2,7 @@
 
 Key/value store for topic -> information about the topic. To communicate from other applications this project uses RPCs and protocol buffers.
 
-To build project run `make`, and install dependencies `pip install -r requirements.txt`. [gRPC](http://www.grpc.io/), [protocol buffers](https://developers.google.com/protocol-buffers/) are also required, and [cassandra](https://gist.github.com/hkhamm/a9a2b45dd749e5d3b3ae) are also required.
+To build project run `make`, and install dependencies `pip install -r requirements.txt`. [gRPC](http://www.grpc.io/), [protocol buffers](https://developers.google.com/protocol-buffers/) is also required.
 
 ### Running the application
 
@@ -23,7 +23,3 @@ To run the knowledge server you can do `python knowledge_server.py`.
 ### Running a test
 
 To run a test you can execute: `python setup.py test`, which will run all the tests in the folder `tests/`.
-
-### Notes
-
-- [How to set up a 4 node Cassandra cluster in under 2 minutes](http://www.screenr.com/5G6)
