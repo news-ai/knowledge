@@ -4,7 +4,7 @@ from grpc.beta import implementations
 from grpc import framework
 
 import knowledge_pb2
-from middleware import log, config
+from middleware import log, config, esclient
 from knowledge import entity_extraction
 
 logger = log.setup_custom_logger('knowledge')
