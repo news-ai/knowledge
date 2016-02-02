@@ -5,4 +5,3 @@ virtualenv==13.1.2
 virtualenvwrapper==4.7.1
 newspaper==0.0.9.8
 elasticsearch==2.2.0
-requests-aws4auth==0.8
