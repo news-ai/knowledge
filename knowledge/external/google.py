@@ -11,7 +11,7 @@ def get_google_knowledge(query):
         'query': query,
         'limit': 10,
         'indent': True,
-        'key': config.GOOGLE_KNOWLEDGE_API,
+        'key': config.GOOGLE_KNOWLEDGE_API
     }
     url = service_url + '?' + urllib.urlencode(params)
     response = json.loads(urllib.urlopen(url).read())
