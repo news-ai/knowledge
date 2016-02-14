@@ -2,17 +2,24 @@ import json
 import os
 import urllib
 
-from middleware import config
+from alchemyapi import AlchemyAPI
 
-def get_alchemy_named_entities(query):
-    endpoint = 'http://access.alchemyapi.com/calls/text/TextGetRankedNamedEntities'
+alchemyapi = AlchemyAPI()
+
+def get_alchemy_text_entities(query):
     params = {
-        'apikey': config.ALCHEMY_API,
-        'text': query,
         'outputMode': 'json',
         'disambiguate': 1,
         'structuredEntities': 1
     }
-    url = endpoint + '?' + urllib.urlencode(params)
-    response = json.loads(urllib.urlopen(url).read())
+    response = alchemyapi.entities('text', query, params)
+    return response
+
+def get_alchemy_url_entities(query):
+    params = {
+        'outputMode': 'json',
+        'disambiguate': 1,
+        'structuredEntities': 1
+    }
+    response = alchemyapi.entities('url', query, params)
     return response
