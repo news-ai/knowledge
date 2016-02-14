@@ -61,3 +61,6 @@ target/
 # Protobuf files
 
 *pb2.py
+
+# Alchemy API
+api_key.txt
