@@ -12,3 +12,9 @@ es = Elasticsearch(
     verify_certs=True,
     connection_class=RequestsHttpConnection
 )
+
+def write_entity(entity):
+	doc = entity.to_dict()
+	res = es.index(index="entities", doc_type='entity', id=1, body=doc)
+	print res
+
