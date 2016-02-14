@@ -23,3 +23,4 @@ def get_alchemy_url_entities(query):
     }
     response = alchemyapi.entities('url', query, params)
     return response
+
