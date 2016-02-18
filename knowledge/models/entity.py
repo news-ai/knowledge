@@ -1,6 +1,6 @@
 import json
 
-class Entity(object):
+class Entity():
 
     def __str__(self):
         return json.dumps(self.entity_to_dict())

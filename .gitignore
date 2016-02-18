@@ -64,3 +64,6 @@ target/
 
 # Alchemy API
 api_key.txt
+
+#OS X 
+.DS_Store

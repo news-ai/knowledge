@@ -15,6 +15,6 @@ es = Elasticsearch(
 
 def write_entity(entity):
 	doc = entity.to_dict()
-	res = es.index(index="entities", doc_type='entity', id=1, body=doc)
+	res = es.index(index="entities", doc_type="entity", id=1, body=doc)
 	print res
 
