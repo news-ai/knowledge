@@ -18,7 +18,7 @@ class KnowledgeServer(unittest.TestCase):
 
     def testServerConnection(self):
         try:
-            response = self.stub.EntityExtraction(knowledge_pb2.EntityRequest(topic='fish'), 10)
+            response = self.stub.EntityExtraction(knowledge_pb2.EntityRequest(text='who let the catfish out', topic='fish'), 10)
             assert response
         except framework.interfaces.face.face.ExpirationError:
             print 'Expiration error!'

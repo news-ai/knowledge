@@ -1,6 +1,6 @@
 import json
 
-class Entity():
+class Entity(object):
 
     def __str__(self):
         return json.dumps(self.entity_to_dict())
@@ -27,4 +27,4 @@ class Entity():
         if alchemy_entity.has_key('disambiguated'):
             entity.metadata = alchemy_entity['disambiguated']
 
-        return entity;
+        return entity
