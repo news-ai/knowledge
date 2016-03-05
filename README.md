@@ -1,8 +1,8 @@
 # knowledge
 
-Key/value store for topic -> information about the topic. To communicate from other applications this project uses RPCs and protocol buffers.
+Key/value store for topic -> information about the topic.
 
-To build project run `make`, and install dependencies `pip install -r requirements.txt`. [gRPC](http://www.grpc.io/), [protocol buffers](https://developers.google.com/protocol-buffers/) is also required.
+To install dependencies `pip install -r requirements.txt`.
 
 ### Running the application
 
