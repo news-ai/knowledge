@@ -123,7 +123,7 @@ class AlchemyAPI:
     ENDPOINTS['imagetagging']['image'] = '/image/ImageGetRankedImageKeywords'
     ENDPOINTS['facetagging'] = {}
     ENDPOINTS['facetagging']['url'] = '/url/URLGetRankedImageFaceTags'
-    ENDPOINTS['facetagging']['image'] = '/image/ImageGetRankedImageFaceTags'    
+    ENDPOINTS['facetagging']['image'] = '/image/ImageGetRankedImageFaceTags'
     ENDPOINTS['taxonomy'] = {}
     ENDPOINTS['taxonomy']['url'] = '/url/URLGetRankedTaxonomy'
     ENDPOINTS['taxonomy']['html'] = '/html/HTMLGetRankedTaxonomy'
