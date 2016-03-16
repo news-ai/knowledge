@@ -28,8 +28,24 @@ def get_login_token():
     return token
 
 
+def get_types(token):
+    headers = {
+        "content-type": "application/json",
+        "accept": "application/json",
+        "authorization": "Bearer " + token
+    }
+    r = requests.get(base_url + "/types/?limit=1018",
+                     headers=headers, verify=False)
+    types = r.json()['results']
+    typeNametoId = {}
+    for i in types:
+        typeNametoId[i['name']] = i
+    return typeNametoId
+
+
 if __name__ == '__main__':
     token = get_login_token()
+    types = get_types(token)
 
     headers = {
         "content-type": "application/json",
@@ -40,4 +56,4 @@ if __name__ == '__main__':
     r = requests.get(base_url + '/articles?entities_processed=False', headers=headers,
                      verify=False)
     articles = r.json()['results']
-    entity_extract(articles[0])
+    entity_extract(articles[0], types, token)
