@@ -34,13 +34,13 @@ def get_types(token):
         "accept": "application/json",
         "authorization": "Bearer " + token
     }
-    r = requests.get(base_url + "/types/?limit=1018",
+    r = requests.get(base_url + "/types/?limit=5000",
                      headers=headers, verify=False)
     types = r.json()['results']
-    typeNametoId = {}
+    typeNametoType = {}
     for i in types:
-        typeNametoId[i['name']] = i
-    return typeNametoId
+        typeNametoType[i['name']] = i
+    return typeNametoType
 
 
 if __name__ == '__main__':
@@ -56,4 +56,4 @@ if __name__ == '__main__':
     r = requests.get(base_url + '/articles?entities_processed=False', headers=headers,
                      verify=False)
     articles = r.json()['results']
-    entity_extract(articles[0], types, token)
+    entity_extract(articles[2], types, token)
