@@ -53,7 +53,8 @@ if __name__ == '__main__':
         "authorization": "Bearer " + token
     }
 
-    r = requests.get(base_url + '/articles?entities_processed=False', headers=headers,
+    # To sort by date do: ordering=-added_at
+    r = requests.get(base_url + '/feeds?entities_processed=False', headers=headers,
                      verify=False)
     articles = r.json()['results']
-    entity_extract(articles[2], types, token)
+    entity_extract(articles[0], types, token)
