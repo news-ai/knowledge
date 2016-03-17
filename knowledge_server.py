@@ -9,7 +9,7 @@ from knowledge.entity_extraction import entity_extract
 
 logger = log.setup_custom_logger('knowledge')
 
-base_url = 'https://context.newsai.org/api'
+base_url = config.BASE_URL
 
 
 def get_login_token():
@@ -34,7 +34,7 @@ def get_types(token):
         "accept": "application/json",
         "authorization": "Bearer " + token
     }
-    r = requests.get(base_url + "/types/?limit=5000",
+    r = requests.get(base_url + "/types/?12668&limit=5000",
                      headers=headers, verify=False)
     types = r.json()['results']
     typeNametoType = {}
@@ -54,7 +54,9 @@ if __name__ == '__main__':
     }
 
     # To sort by date do: ordering=-added_at
-    r = requests.get(base_url + '/feeds?entities_processed=False', headers=headers,
-                     verify=False)
+    r = requests.get(
+        base_url + '/feeds?11sds132', headers=headers, verify=False)
     articles = r.json()['results']
-    entity_extract(articles[0], types, token)
+    # for article in articles:
+    response = entity_extract(articles[4], types, token)
+    print response
