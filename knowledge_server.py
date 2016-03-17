@@ -43,10 +43,21 @@ def get_types(token):
     return typeNametoType
 
 
-if __name__ == '__main__':
-    token = get_login_token()
-    types = get_types(token)
+def process_single_article(article_id, types, token):
+    headers = {
+        "content-type": "application/json",
+        "accept": "application/json",
+        "authorization": "Bearer " + token
+    }
+    r = requests.get(
+        base_url + '/articles/' + article_id + '/', headers=headers, verify=False)
+    article = r.json()
+    print article
+    response = entity_extract(article, types, token)
+    return response
 
+
+def process_all_articles(types, token):
     headers = {
         "content-type": "application/json",
         "accept": "application/json",
@@ -57,8 +68,13 @@ if __name__ == '__main__':
     r = requests.get(
         base_url + '/articles/?entities_processed=False&ordering=-added_at', headers=headers, verify=False)
     articles = r.json()['results']
-    # for article in articles:
-    article = articles[0]
-    if len(article['entity_scores']) is 0:
-        response = entity_extract(article, types, token)
-        print response
+    for article in articles:
+        if len(article['entity_scores']) is 0:
+            response = entity_extract(article, types, token)
+    return response
+
+if __name__ == '__main__':
+    token = get_login_token()
+    types = get_types(token)
+    # process_single_article('', types, token)
+    # process_all_articles(types, token)
