@@ -79,7 +79,7 @@ def add_entityscore_to_api(entity, types, token, api_entity):
         entity['relevance'].encode('utf-8')).decode('utf-8')
     count = urllib.unquote_plus(
         entity['count'].encode('utf-8')).decode('utf-8')
-    r = requests.get(entity_url + "/?entity__name=" + entity_name + '&score=' + str(relevance) + '&count=' + count,
+    r = requests.get(entity_url + "/?entity__name=" + entity_name + '&score=' + str(relevance) + '&count=' + count + '&222',
                      headers=headers, verify=False)
     entityscore = r.json()
     api_entityscore = None
@@ -95,11 +95,30 @@ def add_entityscore_to_api(entity, types, token, api_entity):
         r = requests.post(base_url + "/entityscores/",
                           headers=headers, data=json.dumps(payload), verify=False)
         api_entityscore = r.json()
+
+    api_entityscore = entity_url + '/' + str(api_entityscore['id']) + '/'
     return api_entityscore
 
 
 def add_entityscore_to_articles_api(article, api_entityscores, token):
-    print entityscores
+    headers = {
+        "content-type": "application/json",
+        "accept": "application/json",
+        "authorization": "Bearer " + token
+    }
+
+    print api_entityscores
+
+    payload = {
+        "entities_processed": True,
+        "entity_scores": api_entityscores
+    }
+
+    r = requests.patch(base_url + "/articles/" + str(article['id']),
+                      headers=headers, data=json.dumps(payload), verify=False)
+    print r
+    api_article = r.json()
+    return api_article
 
 
 def entity_extract(article, types, token):
@@ -111,5 +130,6 @@ def entity_extract(article, types, token):
         api_entityscores = []
         for entity in entities:
             single_entity_api = add_entity_to_api(entity, types, token)
-            api_entityscores.append(add_entityscore_to_api(entity, types, token, single_entity_api))
-        add_entityscore_to_articles_api(article, api_entityscores, token)
+            api_entityscores.append(add_entityscore_to_api(
+                entity, types, token, single_entity_api))
+        print add_entityscore_to_articles_api(article, api_entityscores, token)
