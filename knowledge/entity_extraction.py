@@ -52,8 +52,6 @@ def add_entity_to_api(entity, types, token):
         "authorization": "Bearer " + token
     }
 
-    print entity
-
     entity_name = urllib.unquote_plus(
         entity['text'].encode('utf-8')).decode('utf-8')
     r = requests.get(base_url + "/entities/?name=" + entity_name,
@@ -99,63 +97,60 @@ def add_entity_to_api(entity, types, token):
             if 'geo' in entity['disambiguated']:
                 geo_data = entity['disambiguated']['geo'].split(' ')
                 if len(geo_data) is 2:
-                    print entity['disambiguated']['geo']
-                    print geo_data
                     payload['geo_lat'] = numerical.truncate(
                         float(geo_data[0]), 7)
                     payload['geo_long'] = numerical.truncate(
                         float(geo_data[1]), 7)
-                    print payload
         r = requests.post(base_url + "/entities/",
                           headers=headers, data=json.dumps(payload), verify=False)
         api_entity = r.json()
     return api_entity
 
 
-def add_entityscore_to_api(entity, types, token, api_entity):
-    headers = {
-        "content-type": "application/json",
-        "accept": "application/json",
-        "authorization": "Bearer " + token
-    }
-    entity_url = base_url + '/entities'
-    entityscores_url = base_url + '/entityscores'
-
-    # Ensure that there are no more than 6 decimal places in 'relevance'
-    entity['relevance'] = numerical.truncate(float(entity['relevance']), 5)
-    entity['relevance'] = str(entity['relevance'])
-
-    # Check if already added
-    entity_name = urllib.unquote_plus(
-        entity['text'].encode('utf-8')).decode('utf-8')
-    relevance = urllib.unquote_plus(
-        entity['relevance'].encode('utf-8')).decode('utf-8')
-
-    count = urllib.unquote_plus(
-        entity['count'].encode('utf-8')).decode('utf-8')
-    r = requests.get(entityscores_url + "/?entity__name=" + entity_name + '&score=' + str(relevance) + '&count=' + count + '&222',
-                     headers=headers, verify=False)
-    entityscore = r.json()
-    api_entityscore = None
-    if entityscore['count'] > 0:
-        api_entityscore = entityscore['results'][0]
-    else:
-        print api_entity
-        api_entity_id = entity_url + '/' + str(api_entity['id']) + '/'
-        payload = {
-            "entity": api_entity_id,
-            "score": entity['relevance'],
-            "count": entity['count'],
+def add_entityscore_to_api(entity, types, token, api_entity, api_entity_id_added):
+    if api_entity['id'] not in api_entity_id_added:
+        headers = {
+            "content-type": "application/json",
+            "accept": "application/json",
+            "authorization": "Bearer " + token
         }
-        print payload
-        r = requests.post(base_url + "/entityscores/",
-                          headers=headers, data=json.dumps(payload), verify=False)
-        print r
-        api_entityscore = r.json()
+        entity_url = base_url + '/entities'
+        entityscores_url = base_url + '/entityscores'
 
-    print api_entityscore
-    api_entityscore = entityscores_url + '/' + str(api_entityscore['id']) + '/'
-    return api_entityscore
+        # Ensure that there are no more than 6 decimal places in 'relevance'
+        entity['relevance'] = numerical.truncate(float(entity['relevance']), 5)
+        entity['relevance'] = str(entity['relevance'])
+
+        # Check if already added
+        entity_name = urllib.unquote_plus(
+            entity['text'].encode('utf-8')).decode('utf-8')
+        relevance = urllib.unquote_plus(
+            entity['relevance'].encode('utf-8')).decode('utf-8')
+
+        count = urllib.unquote_plus(
+            entity['count'].encode('utf-8')).decode('utf-8')
+        r = requests.get(entityscores_url + "/?entity__name=" + entity_name + '&score=' + str(relevance) + '&count=' + count + '&222',
+                         headers=headers, verify=False)
+        entityscore = r.json()
+        api_entityscore = None
+        if entityscore['count'] > 0:
+            api_entityscore = entityscore['results'][0]
+        else:
+            api_entity_id = entity_url + '/' + str(api_entity['id']) + '/'
+            payload = {
+                "entity": api_entity_id,
+                "score": entity['relevance'],
+                "count": entity['count'],
+            }
+            r = requests.post(base_url + "/entityscores/",
+                              headers=headers, data=json.dumps(payload), verify=False)
+            api_entityscore = r.json()
+
+        api_entity_id_added.append(api_entity['id'])
+        api_entityscore = entityscores_url + \
+            '/' + str(api_entityscore['id']) + '/'
+        return api_entityscore
+    return None
 
 
 def add_entityscore_to_articles_api(article, api_entityscores, token):
@@ -190,11 +185,16 @@ def entity_extract(article, types, token):
         language = alchemy_response['language']
         entities = alchemy_response['entities']
         api_entityscores = []
+        api_entity_id_added = []
         for entity in entities:
             single_entity_api = add_entity_to_api(entity, types, token)
-            print single_entity_api
-            print api_entityscores.append(add_entityscore_to_api(
-                entity, types, token, single_entity_api))
+
+            # This process helps remove duplication from the API.
+            # Having a problem.
+            api_entityscore = add_entityscore_to_api(
+                entity, types, token, single_entity_api, api_entity_id_added)
+            if api_entityscore:
+                api_entityscores.append(api_entityscore)
         response = add_entityscore_to_articles_api(
             article, api_entityscores, token)
         return response

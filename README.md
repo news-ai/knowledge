@@ -2,7 +2,7 @@
 
 Key/value store for topic -> information about the topic.
 
-To install dependencies `pip install -r requirements.txt`.
+To install dependencies `pip install -r requirements.txt`. You also have to add a `api_key.txt` file with the AlchemyAPI key in the base directory (same directory as `knowledge_server.py`).
 
 ### Running the application
 

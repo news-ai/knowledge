@@ -18,8 +18,8 @@ def get_login_token():
         "accept": "application/json"
     }
     payload = {
-        "username": os.environ.get("NEWSAI_CONTEXT_API_USERNAME"),
-        "password": os.environ.get("NEWSAI_CONTEXT_API_PASSWORD"),
+        "username": config.CONTEXT_API_USERNAME,
+        "password": config.CONTEXT_API_PASSWORD,
     }
     r = requests.post(base_url + "/jwt-token/",
                       headers=headers, data=json.dumps(payload), verify=False)
@@ -34,7 +34,7 @@ def get_types(token):
         "accept": "application/json",
         "authorization": "Bearer " + token
     }
-    r = requests.get(base_url + "/types/?12668&limit=5000",
+    r = requests.get(base_url + "/types/?limit=5000",
                      headers=headers, verify=False)
     types = r.json()['results']
     typeNametoType = {}
@@ -55,8 +55,10 @@ if __name__ == '__main__':
 
     # To sort by date do: ordering=-added_at
     r = requests.get(
-        base_url + '/feeds?11sds132', headers=headers, verify=False)
+        base_url + '/articles/?entities_processed=False&ordering=-added_at', headers=headers, verify=False)
     articles = r.json()['results']
     # for article in articles:
-    response = entity_extract(articles[4], types, token)
-    print response
+    article = articles[0]
+    if len(article['entity_scores']) is 0:
+        response = entity_extract(article, types, token)
+        print response
