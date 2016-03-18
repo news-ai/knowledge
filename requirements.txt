@@ -9,7 +9,6 @@ feedfinder2==0.0.1
 feedparser==5.1.3
 Flask==0.10.1
 futures==3.0.4
-grpcio==0.11.0b1
 itsdangerous==0.24
 jieba==0.35
 Jinja2==2.8
