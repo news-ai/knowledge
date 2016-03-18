@@ -64,17 +64,23 @@ def process_all_articles(types, token):
         "authorization": "Bearer " + token
     }
 
+    # API sometimes caches values so we can go ahead and add a small
+    # token to remove that cache
+    small_token = str(int(time.time() * 1000))
+
     # To sort by date do: ordering=-added_at
     r = requests.get(
-        base_url + '/articles/?entities_processed=False&ordering=-added_at', headers=headers, verify=False)
+        base_url + '/articles/?' + small_token + '&entities_processed=False&ordering=-added_at', headers=headers, verify=False)
     articles = r.json()['results']
-    for article in articles:
-        if len(article['entity_scores']) is 0:
-            response = entity_extract(article, types, token)
+    # for article in articles:
+    article = articles[0]
+    response = None
+    if len(article['entity_scores']) is 0:
+        response = entity_extract(article, types, token)
     return response
 
 if __name__ == '__main__':
     token = get_login_token()
     types = get_types(token)
     # process_single_article('', types, token)
-    # process_all_articles(types, token)
+    print process_all_articles(types, token)
