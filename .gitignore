@@ -65,5 +65,8 @@ target/
 # Alchemy API
 api_key.txt
 
-#OS X 
+# OS X 
 .DS_Store
+
+# Celery
+celerybeat-schedule.db

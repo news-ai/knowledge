@@ -2,11 +2,17 @@
 
 Key/value store for topic -> information about the topic.
 
-To install dependencies `pip install -r requirements.txt`. You also have to add a `api_key.txt` file with the AlchemyAPI key in the base directory (same directory as `knowledge_server.py`).
+To install dependencies `pip install -r requirements.txt`. You also have to add a `api_key.txt` file with the AlchemyAPI key in the base directory (same directory as `knowledge.py`).
 
 ### Running the application
 
-To run the knowledge server you can do `python knowledge_server.py`.
+To run the knowledge server you can do `python knowledge.py`.
+
+To run the API server you can do `python api.py`.
+
+Running celery: `celery worker -A taskrunner -l info -c 5`.
+
+Purging celery: `celery -A taskrunner purge`.
 
 ### Problems that this project attempts to solve
 
