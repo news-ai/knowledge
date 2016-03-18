@@ -1,4 +1,8 @@
+amqp==1.4.9
+anyjson==0.3.3
 beautifulsoup4==4.3.2
+billiard==3.3.0.23
+celery==3.1.23
 cssselect==0.9.1
 enum34==1.1.2
 feedfinder2==0.0.1
@@ -9,6 +13,7 @@ grpcio==0.11.0b1
 itsdangerous==0.24
 jieba==0.35
 Jinja2==2.8
+kombu==3.0.34
 lxml==3.3.5
 MarkupSafe==0.23
 newspaper==0.0.9.8
@@ -17,7 +22,9 @@ pbr==1.8.1
 pep8==1.6.2
 Pillow==2.5.1
 python-dateutil==2.4.0
+pytz==2016.1
 PyYAML==3.11
+redis==2.10.5
 requests==2.7.0
 six==1.7.3
 stevedore==1.10.0
