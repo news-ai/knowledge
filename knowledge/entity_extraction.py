@@ -81,8 +81,14 @@ def add_entity_to_api(entity, types, token):
             if 'subType' in entity['disambiguated']:
                 sub_types = []
                 for sub_type in entity['disambiguated']['subType']:
+                    sub_type_id = None
+                    if sub_type in types:
+                        sub_type_id = types[sub_type]['id']
+                    else:
+                        subtype_entity = add_type_to_api(sub_type, token)
+                        sub_type_id = subtype_entity['id']
                     sub_types.append(
-                        types_url + str(types[sub_type]['id']) + '/')
+                        types_url + str(sub_type_id) + '/')
                 payload['sub_types'] = sub_types
             if 'yago' in entity['disambiguated']:
                 payload['yago'] = entity['disambiguated']['yago']
