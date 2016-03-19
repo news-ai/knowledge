@@ -1,3 +1,4 @@
+import time
 import json
 import urllib
 
@@ -26,7 +27,9 @@ def add_type_to_api(type_name, token):
     type_name = urllib.unquote_plus(
         type_name.encode('utf-8')).decode('utf-8')
 
-    r = requests.get(base_url + "/entities/?name=" + type_name,
+    small_token = str(int(time.time() * 1000))
+
+    r = requests.get(base_url + "/types/?" + small_token + "&name=" + type_name,
                      headers=headers, verify=False)
     types = r.json()
 
