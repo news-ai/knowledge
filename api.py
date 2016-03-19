@@ -6,14 +6,15 @@ from raven import Client
 from flask import Flask, render_template, request, url_for
 
 # Imports from app
-from articles import process_single_article
+from articles import process_single_article, process_single_article_nc
 from context import get_login_token, get_types
 from middleware import config
 
 app = Flask(__name__)
 
-client = Client(
-    'https://99f7cb4fd29148f783ef5300f867570d:dabc526c069241dd852cc2b756c2cd06@app.getsentry.com/69539')
+if not config.DEBUG:
+    client = Client(
+        'https://99f7cb4fd29148f783ef5300f867570d:dabc526c069241dd852cc2b756c2cd06@app.getsentry.com/69539')
 
 types = {}
 

@@ -1,7 +1,7 @@
 # Stdlib imports
 import os
 
-DEBUG = True
+DEBUG = bool(os.getenv('NEWSAI_KNOWLEDGE_DEBUG', False))
 ALCHEMY_API = os.getenv('NEWSAI_ALCHEMY_API', '')
 GOOGLE_KNOWLEDGE_API = os.getenv('NEWSAI_GOOGLE_KNOWLEDGE_API', '')
 NYTIMES_SEMANTIC_API = os.getenv('NEWSAI_NYTIMES_SEMANTIC_API', '')

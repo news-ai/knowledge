@@ -17,4 +17,5 @@ base_url = config.BASE_URL
 
 
 def article_improve(article, types, token):
-    pass
+    print article
+    return article

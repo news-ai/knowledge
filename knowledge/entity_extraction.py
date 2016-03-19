@@ -178,14 +178,9 @@ def add_entityscore_to_articles_api(article, api_entityscores, token):
         "entity_scores": api_entityscores
     }
 
-    print api_entityscores
-
     r = requests.put(base_url + "/articles/" + str(article['id']) + '/',
                      headers=headers, data=json.dumps(payload), verify=False)
     api_article = r.json()
-
-    print r
-    print api_article
 
     return api_article
 

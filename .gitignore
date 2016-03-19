@@ -70,3 +70,6 @@ api_key.txt
 
 # Celery
 celerybeat-schedule.db
+
+# local testing
+api_local.py
