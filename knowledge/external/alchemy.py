@@ -1,7 +1,9 @@
+# Stdlib imports
 import json
 import os
 import urllib
 
+# Third-party app imports
 from alchemyapi import AlchemyAPI
 
 alchemyapi = AlchemyAPI()

@@ -1,10 +1,14 @@
+# Stdlib imports
 import time
 import json
 
+# Third-party app imports
 import requests
 
+# Imports from app
 from middleware import config
 from knowledge.entity_extraction import entity_extract
+from knowledge.article_improvement import article_improve
 from context import get_login_token, get_types
 from taskrunner import app
 

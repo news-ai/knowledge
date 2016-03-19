@@ -1,4 +1,7 @@
+# Third-party app imports
 from celery import Celery
+
+# Imports from app
 import celeryconfig
 
 

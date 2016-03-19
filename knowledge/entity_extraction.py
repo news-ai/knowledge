@@ -1,17 +1,18 @@
+# Stdlib imports
 import time
 import json
 import urllib
 
-import requests
-
-import external.alchemy as alchemy
-
+# Third-party app imports
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
+# Imports from app
+import external.alchemy as alchemy
 from middleware import config
 from .utils import numerical
 
+# Removing requests warning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 base_url = config.BASE_URL
@@ -57,7 +58,10 @@ def add_entity_to_api(entity, types, token):
 
     entity_name = urllib.unquote_plus(
         entity['text'].encode('utf-8')).decode('utf-8')
-    r = requests.get(base_url + "/entities/?name=" + entity_name,
+
+    small_token = str(int(time.time() * 1000))
+
+    r = requests.get(base_url + "/entities/?" + small_token + "&name=" + entity_name,
                      headers=headers, verify=False)
     context = r.json()
     api_entity = None
