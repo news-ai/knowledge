@@ -9,6 +9,7 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 # Imports from app
 from middleware import config
+from .external.readabilityapi import get_readability_url
 
 # Removing requests warning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
@@ -18,4 +19,5 @@ base_url = config.BASE_URL
 
 def article_improve(article, types, token):
     print article
+    print json.dumps(get_readability_url(article['url']))
     return article

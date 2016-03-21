@@ -2,7 +2,7 @@ from readability import ParserClient
 
 from middleware import config
 
-parser_client = ParserClient(config.READABILITY_API)
+parser_client = ParserClient(token=config.READABILITY_API)
 
 
 def get_readability_url(query):
