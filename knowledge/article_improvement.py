@@ -17,7 +17,17 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 base_url = config.BASE_URL
 
 
+def author_extraction(article, types, token):
+    api_authors = []
+    readability_article = get_readability_url(article['url'])
+
+    if readability_article['author']:
+        author = readability_article['author'].title()
+        publisher = article['publisher']['name']
+        print author, publisher
+
+
 def article_improve(article, types, token):
-    print article
-    print json.dumps(get_readability_url(article['url']))
+    if len(article['authors']) is 0:
+        author_extraction(article, types, token)
     return article
