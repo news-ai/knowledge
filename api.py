@@ -6,7 +6,7 @@ from raven import Client
 from flask import Flask, render_template, request, url_for
 
 # Imports from app
-from articles import process_single_article, process_single_article_nc
+from articles import process_single_article
 from context import get_login_token, get_types
 from middleware import config
 
