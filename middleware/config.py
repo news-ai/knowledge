@@ -9,4 +9,4 @@ READABILITY_API = os.getenv('NEWSAI_READABILITY_API', '')
 CONTEXT_API_USERNAME = os.environ.get('NEWSAI_CONTEXT_API_USERNAME', '')
 CONTEXT_API_PASSWORD = os.environ.get('NEWSAI_CONTEXT_API_PASSWORD', '')
 
-BASE_URL = 'https://context.newsai.org/api'
+BASE_URL = 'https://internal.newsai.org/api'
