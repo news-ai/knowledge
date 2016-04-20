@@ -13,6 +13,8 @@ def entity_extract(article, types, token):
         api_entityscores = []
         api_entity_id_added = []
         for entity in entities:
+            if 'text' in entity:
+                entity['text'] = entity['text'].title()
             single_entity_api = add_entity_to_api(entity, types, token)
 
             # This process helps remove duplication from the API.
