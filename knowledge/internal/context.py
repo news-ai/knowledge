@@ -57,6 +57,7 @@ def add_entity_to_api(entity, types, token):
 
     entity_name = urllib.unquote_plus(
         entity['text'].encode('utf-8')).decode('utf-8')
+    entity_name = entity_name.title()
 
     small_token = str(int(time.time() * 1000))
 
@@ -136,6 +137,7 @@ def add_entityscore_to_api(entity, types, token, api_entity, api_entity_id_added
         # Check if already added
         entity_name = urllib.unquote_plus(
             entity['text'].encode('utf-8')).decode('utf-8')
+        entity_name = entity_name.title()
         relevance = urllib.unquote_plus(
             entity['relevance'].encode('utf-8')).decode('utf-8')
 
