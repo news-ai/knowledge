@@ -1,6 +1,8 @@
 # Imports from app
 from knowledge.external.freebase import get_freebase_data
-from knowledge.external.dbpedia import get_dbpedia_data
+from knowledge.external.dbpedia import get_dbpedia_description
+
 
 def entity_improve(entity, types, token):
-    get_dbpedia_data(entity['dbpedia'])
+    if 'dbpedia' in entity:
+        print get_dbpedia_description(entity['dbpedia'])

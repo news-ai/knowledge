@@ -23,10 +23,9 @@ types = {}
 def knowledge_server():
     if request.method == 'POST':
         content = request.json
-        token = get_login_token()
 
         res = process_single_article.apply_async(
-            [content['id'], types, token])
+            [content['id'], types])
         return str(res.task_id)
 
 if __name__ == "__main__":

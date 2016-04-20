@@ -15,7 +15,8 @@ base_url = config.BASE_URL
 
 
 @app.task
-def process_single_article(article_id, types, token):
+def process_single_article(article_id, types):
+    token = get_login_token()
     headers = {
         "content-type": "application/json",
         "accept": "application/json",
