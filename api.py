@@ -25,7 +25,7 @@ def knowledge_server():
         content = request.json
 
         res = process_single_article.apply_async(
-            [content['id'], types])
+            [content['id'], types], '')
         return str(res.task_id)
 
 if __name__ == "__main__":
