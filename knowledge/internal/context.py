@@ -177,7 +177,7 @@ def add_entityscore_to_api(entity, types, token, api_entity, api_entity_id_added
         api_entityscore = entityscores_url + \
             '/' + str(api_entityscore['id']) + '/'
         return (api_entityscore, api_entity_id_added)
-    return None
+    return (None, api_entity_id_added)
 
 
 def add_entityscore_to_articles_api(article, api_entityscores, token):
