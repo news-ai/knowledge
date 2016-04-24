@@ -6,6 +6,7 @@ import urllib
 # Third-party app imports
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
+from pymongo import MongoClient
 
 # Imports from app
 from middleware import config
@@ -13,6 +14,11 @@ from knowledge.utils import numerical
 
 # Removing requests warning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
+# MongoDB setup
+client = MongoClient(connect=False)
+db = client.knowledge
+entity_collection = db.entities
 
 base_url = config.BASE_URL
 
@@ -49,6 +55,9 @@ def add_type_to_api(type_name, token):
 
 
 def add_entity_to_api(entity, types, token):
+    api_entity = None
+    context = {}
+
     headers = {
         "content-type": "application/json",
         "accept": "application/json",
@@ -57,13 +66,16 @@ def add_entity_to_api(entity, types, token):
 
     entity_name = urllib.unquote_plus(
         entity['text'].encode('utf-8')).decode('utf-8')
+    mongo_entity = entity_collection.find_one({'name': entity_name})
+
+    if mongo_entity:
+        return mongo_entity
 
     small_token = str(int(time.time() * 1000))
-
-    r = requests.get(base_url + "/entities/?" + small_token + "&name=" + entity_name,
-                     headers=headers, verify=False)
+    r = requests.get(base_url + "/entities/?" + small_token +
+                     "&name=" + entity_name, headers=headers, verify=False)
     context = r.json()
-    api_entity = None
+
     if context['count'] > 0:
         api_entity = context['results'][0]
     else:
@@ -116,6 +128,9 @@ def add_entity_to_api(entity, types, token):
         r = requests.post(base_url + "/entities/",
                           headers=headers, data=json.dumps(payload), verify=False)
         api_entity = r.json()
+
+        # Add the entity to MongoDB to cache for local server
+        entity_collection.insert_one(api_entity)
     return api_entity
 
 
