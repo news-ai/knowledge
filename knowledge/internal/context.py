@@ -135,7 +135,7 @@ def add_entity_to_api(entity, types, token):
 
 
 def add_entityscore_to_api(entity, types, token, api_entity, api_entity_id_added):
-    if api_entity['id'] not in api_entity_id_added:
+    if 'id' in api_entity and api_entity['id'] not in api_entity_id_added:
         headers = {
             "content-type": "application/json",
             "accept": "application/json",
