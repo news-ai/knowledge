@@ -6,8 +6,8 @@ from raven import Client
 from flask import Flask, render_template, request, url_for
 
 # Imports from app
+from knowledge.internal.context import get_login_token, get_types
 from articles import process_single_article
-from context import get_login_token, get_types
 from middleware import config
 
 app = Flask(__name__)

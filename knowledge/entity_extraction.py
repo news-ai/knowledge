@@ -1,6 +1,10 @@
 # Imports from app
 import external.alchemy as alchemy
-from internal.context import add_entity_to_api, add_entityscore_to_api, add_entityscore_to_articles_api
+from internal.context import (
+    add_entity_to_api,
+    add_entityscore_to_api,
+    add_entityscore_to_articles_api,
+)
 
 
 def entity_extract(article, types, token):

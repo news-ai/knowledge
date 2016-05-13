@@ -1,2 +1,2 @@
 import sys
-sys.path.insert(0,'../knowledge')
+sys.path.insert(0, '../knowledge')

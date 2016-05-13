@@ -7,8 +7,8 @@ import requests
 
 # Imports from app
 from middleware import config
+from knowledge.internal.context import get_login_token, get_types
 from knowledge.entity_extraction import entity_extract
-from context import get_login_token, get_types
 from taskrunner import app
 
 base_url = config.BASE_URL
