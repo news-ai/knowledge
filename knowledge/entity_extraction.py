@@ -1,6 +1,6 @@
 # Imports from app
 import external.alchemy as alchemy
-from internal.context import (
+from knowledge.internal.context import (
     add_entity_to_api,
     add_entityscore_to_api,
     add_entityscore_to_articles_api,

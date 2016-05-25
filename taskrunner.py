@@ -9,7 +9,7 @@ def make_celery():
     celery = Celery(
         'taskrunner',
         broker='redis://localhost:6379/0',
-        include=['articles'],
+        include=['knowledge.articles'],
     )
     celery.config_from_object(celeryconfig)
     return celery
