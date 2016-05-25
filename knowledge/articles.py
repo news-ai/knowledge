@@ -25,29 +25,6 @@ def process_single_article(article_id, types):
     r = requests.get(
         base_url + '/articles/' + article_id + '/', headers=headers, verify=False)
     article = r.json()
-    response = entity_extract(article, types, token)
-    return response
-
-
-@app.task
-def process_all_articles(types, token):
-    headers = {
-        "content-type": "application/json",
-        "accept": "application/json",
-        "authorization": "Bearer " + token
-    }
-
-    # API sometimes caches values so we can go ahead and add a small
-    # token to remove that cache
-    small_token = str(int(time.time() * 1000))
-
-    # To sort by date do: ordering=-added_at
-    r = requests.get(
-        base_url + '/articles/?' + small_token + '&entities_processed=False&ordering=-added_at', headers=headers, verify=False)
-    articles = r.json()['results']
-    # for article in articles:
-    article = articles[0]
-    response = None
-    if len(article['entity_scores']) is 0:
-        response = entity_extract(article, types, token)
-    return response
+    res = celery_app.send_task(
+        'knowledge.entity_extraction.entity_extract', ([article, types, token]))
+    return True

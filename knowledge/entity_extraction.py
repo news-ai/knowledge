@@ -1,5 +1,6 @@
 # Imports from app
 import external.alchemy as alchemy
+from taskrunner import app
 from knowledge.internal.context import (
     add_entity_to_api,
     add_entityscore_to_api,
@@ -7,9 +8,9 @@ from knowledge.internal.context import (
 )
 
 
+@app.task
 def entity_extract(article, types, token):
     alchemy_response = alchemy.get_alchemy_url_entities(article['url'])
-    print alchemy_response['status']
 
     if alchemy_response['status'] == 'OK':
         language = alchemy_response['language']
@@ -29,4 +30,5 @@ def entity_extract(article, types, token):
                 api_entityscores.append(api_entityscore)
         response = add_entityscore_to_articles_api(
             article, api_entityscores, token)
-        return response
+        return True
+    return False

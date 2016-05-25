@@ -16,6 +16,7 @@ from middleware.config import (
 )
 from knowledge.internal.context import get_login_token, get_types
 from knowledge.articles import process_single_article
+from taskrunner import app as celery_app
 
 # Setting up Flask and API
 app = Flask(__name__)
@@ -43,9 +44,9 @@ class Knowledge(Resource):
 
     def post(self):
         args = parser.parse_args()
-        res = process_single_article.apply_async(
-            [args['id'], types])
-        return str(res.task_id)
+        res = celery_app.send_task(
+            'knowledge.articles.process_single_article', ([args['id'], types]))
+        return jsonify({'id': res.task_id})
 
 api.add_resource(Knowledge, '/knowledge')
 
