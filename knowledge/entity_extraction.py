@@ -1,3 +1,6 @@
+# Stdlib imports
+import logging
+
 # Imports from app
 import external.alchemy as alchemy
 from external.yago import get_article_text
@@ -7,6 +10,8 @@ from knowledge.internal.context import (
     add_entityscore_to_api,
     add_entityscore_to_articles_api,
 )
+
+logger = logging.getLogger(__name__)
 
 
 @app.task
@@ -32,9 +37,8 @@ def entity_extract(article, types, token):
         response = add_entityscore_to_articles_api(
             article, api_entityscores, token)
         return True
-    # else:
-    #     sentry.captureMessage(
-    #         'Alchemy API is maxed out or not working ' + str(alchemy_response['status']))
-    #     # yago_data = get_article_text(article['url'])
-    #     # return True
+    else:
+        logger.error('Alchemy API is maxed out or not working ' + str(alchemy_response['status'], exc_info=True)
+        # yago_data = get_article_text(article['url'])
+        # return True
     return False
