@@ -1,5 +1,7 @@
 # Imports from app
 import external.alchemy as alchemy
+from api import sentry
+from external.yago import get_article_text
 from taskrunner import app
 from knowledge.internal.context import (
     add_entity_to_api,
@@ -31,4 +33,9 @@ def entity_extract(article, types, token):
         response = add_entityscore_to_articles_api(
             article, api_entityscores, token)
         return True
+    else:
+        sentry.captureMessage(
+            'Alchemy API is maxed out or not working ' + str(alchemy_response['status']))
+        # yago_data = get_article_text(article['url'])
+        # return True
     return False
