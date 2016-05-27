@@ -25,6 +25,6 @@ def process_single_article(article_id, types):
     r = requests.get(
         base_url + '/articles/' + article_id + '/', headers=headers, verify=False)
     article = r.json()
-    res = celery_app.send_task(
+    res = app.send_task(
         'knowledge.entity_extraction.entity_extract', ([article, types, token]))
     return True

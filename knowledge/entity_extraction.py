@@ -38,7 +38,8 @@ def entity_extract(article, types, token):
             article, api_entityscores, token)
         return True
     else:
-        logger.error('Alchemy API is maxed out or not working ' + str(alchemy_response['status']), exc_info=True)
+        logger.error('Alchemy API is maxed out or not working ' +
+                     str(alchemy_response['status']), exc_info=True)
         # yago_data = get_article_text(article['url'])
         # return True
     return False
