@@ -14,3 +14,8 @@ SENTRY_PASSWORD = 'dabc526c069241dd852cc2b756c2cd06'
 SENTRY_APP_ID = '69539'
 
 BASE_URL = 'https://internal.newsai.org/api'
+
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_PORT = 587
+EMAIL_USERNAME = 'celery@dev.newsai.org'
+EMAIL_PASSWORD = 'MA6qGNFyZiZoeUAT}N4v'
